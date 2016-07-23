@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<phpunit xmlns="http://schema.phpunit.de/coverage/1.0">
+  <project name="/Users/dipo/Code/fin-system/app/tests">
+    <tests>
+      <test name="AuthTest::testMethod" size="unknown" result="0" status="PASSED"/>
+      <test name="ExampleTest::testBasicExample" size="unknown" result="0" status="PASSED"/>
+      <test name="ProtectedRoutesTest::testDashboard" size="unknown" result="0" status="PASSED"/>
+      <test name="ProtectedRoutesTest::testTransactions" size="unknown" result="0" status="PASSED"/>
+      <test name="ProtectedRoutesTest::testMyBanks" size="unknown" result="0" status="PASSED"/>
+    </tests>
+    <directory name="/Users/dipo/Code/fin-system/app/tests">
+      <totals>
+        <lines total="90" comments="20" code="70" executable="21" executed="21" percent="100.00%"/>
+        <methods count="6" tested="6" percent="100.00%"/>
+        <functions count="0" tested="0" percent=""/>
+        <classes count="4" tested="4" percent="100.00%"/>
+        <traits count="0" tested="0" percent=""/>
+      </totals>
+      <file name="AuthTest.php" href="AuthTest.php.xml">
+        <totals>
+          <lines total="16" comments="5" code="11" executable="3" executed="3" percent="100.00%"/>
+          <methods count="1" tested="1" percent="100.00%"/>
+          <functions count="0" tested="0" percent=""/>
+          <classes count="1" tested="1" percent="100.00%"/>
+          <traits count="0" tested="0" percent=""/>
+        </totals>
+      </file>
+      <file name="ExampleTest.php" href="ExampleTest.php.xml">
+        <totals>
+          <lines total="17" comments="5" code="12" executable="3" executed="3" percent="100.00%"/>
+          <methods count="1" tested="1" percent="100.00%"/>
+          <functions count="0" tested="0" percent=""/>
+          <classes count="1" tested="1" percent="100.00%"/>
+          <traits count="0" tested="0" percent=""/>
+        </totals>
+      </file>
+      <file name="ProtectedRoutesTest.php" href="ProtectedRoutesTest.php.xml">
+        <totals>
+          <lines total="38" comments="5" code="33" executable="12" executed="12" percent="100.00%"/>
+          <methods count="3" tested="3" percent="100.00%"/>
+          <functions count="0" tested="0" percent=""/>
+          <classes count="1" tested="1" percent="100.00%"/>
+          <traits count="0" tested="0" percent=""/>
+        </totals>
+      </file>
+      <file name="TestCase.php" href="TestCase.php.xml">
+        <totals>
+          <lines total="19" comments="5" code="14" executable="3" executed="3" percent="100.00%"/>
+          <methods count="1" tested="1" percent="100.00%"/>
+          <functions count="0" tested="0" percent=""/>
+          <classes count="1" tested="1" percent="100.00%"/>
+          <traits count="0" tested="0" percent=""/>
+        </totals>
+      </file>
+    </directory>
+  </project>
+</phpunit>

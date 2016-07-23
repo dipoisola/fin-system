@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<phpunit xmlns="http://schema.phpunit.de/coverage/1.0">
+  <file name="ProtectedRoutesTest.php">
+    <totals>
+      <lines total="38" comments="5" code="33" executable="12" executed="12" percent="100.00%"/>
+      <methods count="3" tested="3" percent="100.00%"/>
+      <functions count="0" tested="0" percent=""/>
+      <classes count="1" tested="1" percent="100.00%"/>
+      <traits count="0" tested="0" percent=""/>
+    </totals>
+    <class name="ProtectedRoutesTest" start="3" executable="12" executed="12" crap="3">
+      <package full="" name="" sub="" category=""/>
+      <namespace name=""/>
+      <method name="testDashboard" signature="testDashboard()" start="12" end="19" crap="1" executable="4" executed="4" coverage="100"/>
+      <method name="testTransactions" signature="testTransactions()" start="21" end="28" crap="1" executable="4" executed="4" coverage="100"/>
+      <method name="testMyBanks" signature="testMyBanks()" start="30" end="37" crap="1" executable="4" executed="4" coverage="100"/>
+    </class>
+    <coverage>
+      <line nr="14">
+        <covered by="ProtectedRoutesTest::testDashboard"/>
+      </line>
+      <line nr="16">
+        <covered by="ProtectedRoutesTest::testDashboard"/>
+      </line>
+      <line nr="18">
+        <covered by="ProtectedRoutesTest::testDashboard"/>
+      </line>
+      <line nr="19">
+        <covered by="ProtectedRoutesTest::testDashboard"/>
+      </line>
+      <line nr="23">
+        <covered by="ProtectedRoutesTest::testTransactions"/>
+      </line>
+      <line nr="25">
+        <covered by="ProtectedRoutesTest::testTransactions"/>
+      </line>
+      <line nr="27">
+        <covered by="ProtectedRoutesTest::testTransactions"/>
+      </line>
+      <line nr="28">
+        <covered by="ProtectedRoutesTest::testTransactions"/>
+      </line>
+      <line nr="32">
+        <covered by="ProtectedRoutesTest::testMyBanks"/>
+      </line>
+      <line nr="34">
+        <covered by="ProtectedRoutesTest::testMyBanks"/>
+      </line>
+      <line nr="36">
+        <covered by="ProtectedRoutesTest::testMyBanks"/>
+      </line>
+      <line nr="37">
+        <covered by="ProtectedRoutesTest::testMyBanks"/>
+      </line>
+    </coverage>
+  </file>
+</phpunit>

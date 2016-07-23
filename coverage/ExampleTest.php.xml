@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<phpunit xmlns="http://schema.phpunit.de/coverage/1.0">
+  <file name="ExampleTest.php">
+    <totals>
+      <lines total="17" comments="5" code="12" executable="3" executed="3" percent="100.00%"/>
+      <methods count="1" tested="1" percent="100.00%"/>
+      <functions count="0" tested="0" percent=""/>
+      <classes count="1" tested="1" percent="100.00%"/>
+      <traits count="0" tested="0" percent=""/>
+    </totals>
+    <class name="ExampleTest" start="3" executable="3" executed="3" crap="1">
+      <package full="" name="" sub="" category=""/>
+      <namespace name=""/>
+      <method name="testBasicExample" signature="testBasicExample()" start="10" end="15" crap="1" executable="3" executed="3" coverage="100"/>
+    </class>
+    <coverage>
+      <line nr="12">
+        <covered by="ExampleTest::testBasicExample"/>
+      </line>
+      <line nr="14">
+        <covered by="ExampleTest::testBasicExample"/>
+      </line>
+      <line nr="15">
+        <covered by="ExampleTest::testBasicExample"/>
+      </line>
+    </coverage>
+  </file>
+</phpunit>

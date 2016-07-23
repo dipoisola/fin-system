@@ -1,0 +1,195 @@
+.nav>li>a, .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover, .dropdown-menu>li>a, .dropdown-menu>li{
+  border-bottom: 3px solid transparent;
+}
+.nav>li>a:focus, .nav>li>a:hover,.nav .open>a, .nav .open>a:focus, .nav .open>a:hover, .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover{
+  border-bottom: 3px solid transparent;
+  background: none;
+}
+.navbar a, .dropdown-menu>li>a, .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover{
+ color: #101010;
+}
+.dropdown-menu {
+      -webkit-box-shadow: none;
+    box-shadow:none;
+}
+.navbar {
+  background-color: #5D97C7;
+  border: 0px solid black;
+  border-radius: 0px;
+  font-color: #d6ffd6;
+}
+.center-signup {
+  color: black;
+  height: 50px;
+  width: 400px;
+  text-align: center;
+  margin: 20px 20px 20px 20px;
+}
+
+.btn-submit {
+  background-color: #5D97C7;
+  border: none;
+  border-radius: 0px;
+  color: #f4f4f4;
+  cursor: pointer;
+  height: 40px;
+  width: 100%;
+  text-transform: uppercase;
+  -webkit-appearance:none;
+}
+
+.btn-credit, .btn-payUser, .btn-createBank, .btn-payBank, .btn-transact {
+  background-color: #2EC866;
+  border: none;
+  border-radius: 0px;
+  color: #151515;
+  cursor: pointer;
+  font-size: 10px;
+  height: 40px;
+  width: 30%;
+  text-transform: uppercase;
+  -webkit-appearance:none;
+}
+
+.btn-create-bank {
+  background-color: #17224C;
+  border: none;
+  border-radius: 0px;
+  margin: 5px 0px 7px 0px;
+  color: white;
+  cursor: pointer;
+  font-size: 10px;
+  height: 40px;
+  width: 30%;
+  text-transform: uppercase;
+  -webkit-appearance:none;
+}
+
+.btn-create-bank:focus, .btn-debit:focus, .btn-credit:focus, .btn-payUser:focus, .btn-createBank:focus, .btn-payBank:focus {
+  outline: none;  
+}
+
+.btn-debit {
+  background-color: #5D97C7;
+  border: none;
+  border-radius: 0px;
+  color: #151515;
+  cursor: pointer;
+  font-size: 10px;
+  height: 40px;
+  width: 30%;
+  text-transform: uppercase;
+  -webkit-appearance:none;
+}
+
+.btn-user {
+  background-color: #5D97C7;
+  border: none;
+  border-radius: 0px;
+  color: #151515;
+  cursor: pointer;
+  font-size: 10px;
+  height: 32px;
+  width: 28%;
+  text-transform: uppercase;
+  -webkit-appearance:none;
+}
+
+.btn-account {
+  background-color: #5D97C7;
+  border: none;
+  border-radius: 0px;
+  color: #151515;
+  cursor: pointer;
+  font-size: 10px;
+  height: 32px;
+  width: 28%;
+  text-transform: uppercase;
+  -webkit-appearance:none;
+}
+
+.status-submit {
+  background-color: #5b9859;
+  border: none;
+  border-radius: 0px;
+  cursor: pointer;
+  height: 30px;
+  width: 25%;
+  align: right;
+  margin-top: 3px;
+  text-transform: uppercase;
+  -webkit-appearance:none;
+}
+.wide-input {
+  width: 100%;
+  height: 50px;
+  border-radius: 0px;
+  margin-bottom: 5px;
+}
+.wide-input1 {
+  width: 100%;
+  height: 30px;
+  border-radius: 0px;
+  margin-bottom: 5px;
+}
+
+.credit-input, .user-email, .bank-name, .acc-type, .usercredit {
+  width: 80%;
+  height: 40px;
+  border-radius: 0px;
+  margin-bottom: 5px;
+  padding-left: 7px;
+  font-size: 12px;
+}
+
+.offset > form > button {
+  margin-left: auto;
+  margin-right: auto;
+}
+.offset > form > input {
+  margin-left: auto;
+  margin-right: auto;
+}
+.error-msg {
+  min-width: 350px;
+  height: 40px;
+  background-color: white;
+}
+.error-msg > ol, ul {
+  list-style: none;
+}
+.t-area {
+  resize: none;
+  border-radius: 0px;
+}
+
+
+body {
+  background: #F9F9F9;
+  font-family: 'Inconsolata';
+  font-size: 16px;
+}
+
+.garamondize {
+  font-family: Lucida Console;
+}
+
+.white-lines {
+  background-color: white;
+}
+
+.solid-green {
+  border: 1px solid green;
+}
+
+.center-image {
+  border: 1px solid black;
+  border-radius: 59px;
+  display: block;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+#debitDialog, #creditForm, #payUserForm, #payBankForm, #createBankForm {
+  display: none;
+}
