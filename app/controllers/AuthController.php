@@ -11,7 +11,7 @@ class AuthController extends BaseController {
 	{
 		return View::make('auth.login');
 	}
-
+    
 	public function registerUser()
 	{
 		$username = Input::get('username');
