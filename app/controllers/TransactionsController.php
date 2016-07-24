@@ -46,7 +46,7 @@ class TransactionsController extends BaseController {
 		$user->wallet_balance = $newBalance;
 		$user->save();	
 
-		return Redirect::to('dashboard');
+		return Response::json(['balance'=> $user->wallet_balance]);
 	}
 
 	/**
@@ -64,7 +64,7 @@ class TransactionsController extends BaseController {
 		$friend = User::where('email', '=', $email)->first();
 
 		if($friend == $user || !$friend) {
-			return Redirect::to('dashboard');
+			return Response::json(['error' => 'Invalid recepient email']);
 		}
 
 		$newBalance = $friend->wallet_balance + $credit;
@@ -72,7 +72,7 @@ class TransactionsController extends BaseController {
 		$user->wallet_balance -= $credit;
 
 		if($user->wallet_balance < 0) {
-			return Redirect::to('dashboard');
+			return Response::json(['error'=> 'Insufficient balance']);
 		}
 
 		$transaction = [
@@ -89,9 +89,13 @@ class TransactionsController extends BaseController {
 		$friend->wallet_balance = $newBalance;
 		$friend->save();
 		
-		$user->save();
 
-		return Redirect::to('dashboard');
+		$user->save();
+		
+		return Response::json(['balance'=> $user->wallet_balance]);
+
+
+		// return Redirect::to('dashboard');
 	}
 
 	public function creditBankAccount()
@@ -107,7 +111,7 @@ class TransactionsController extends BaseController {
 		$user->wallet_balance -= $credit;
 
 		if($user->wallet_balance < 0) {
-			return Redirect::to('dashboard');
+			return Response::json(['error'=> 'Insufficient balance']);
 		}
 
 		$transaction = [
@@ -124,7 +128,7 @@ class TransactionsController extends BaseController {
 		$bank->save(); 
 		$user->save();
 
-		return Redirect::to('dashboard');
+		return Response::json(['balance'=> $user->wallet_balance]);
 	}
 
 	public function makeTransaction($transactionData)

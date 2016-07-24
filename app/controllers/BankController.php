@@ -5,7 +5,6 @@ class BankController extends BaseController {
 	public function getIndex()
 	{
 		$user = Auth::user();
-		// $banks = Bank::where('user_id', Auth::user()->id)->get();
 
 		return View::make('bank', ['user' => $user]);
 	}
@@ -20,8 +19,12 @@ class BankController extends BaseController {
 		$bankdata = ['name' => $bankname,'account_no' => $accountNo, 'account_type' => $type, 'user_id' => $user->id];
 
 		$bank = new Bank($bankdata);
-		$bank->save();
-
-		return Redirect::to('mybanks');
+		$success = $bank->save();
+		
+		if($success) {
+			return Response::json(['bank'=> $bank]);
+		} else {
+			return Response::json(['error'=> 'An error occured while processing the data']);
+		}
 	}
 }

@@ -1,0 +1,38 @@
+.enter-value {
+	font-size: 13px;
+	color: #35495E;
+}
+.dashboard-border {
+	border: 1px black solid;
+	height: 400px;
+	text-align: center;
+}
+.b--dashboard-font {
+	font-weight: 800;
+	font-size: 45px;
+}
+.dashboard-partition {
+	border: 1px black dashed;
+	margin-bottom: 5px;
+}
+.b--balance-font {
+	font-weight: 900;
+	font-size: 45px;
+}
+.margintop-30 {
+	margin-top: 30px;
+}
+.login-font {
+	text-align: center;
+	font-weight: 800;
+	margin-bottom: 5px;
+}
+.session-text {
+	color: red;
+	font-size: 11px;
+	text-align: center;
+}
+.acc-message {
+	line-height: 50px;
+	text-align: center;
+}

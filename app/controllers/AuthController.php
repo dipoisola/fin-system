@@ -52,8 +52,8 @@ class AuthController extends BaseController {
 			]);
 		
 		$user->save();	
-
-		return Redirect::to('dashboard');
+		Session::flash('info', 'Registration successful, you can now login');
+		return Redirect::to('login');
 	}
 
 	public function logUserIn()
@@ -67,6 +67,7 @@ class AuthController extends BaseController {
 
 		    return Redirect::to('dashboard');
 		} else {
+			Session::flash('info', 'Wrong login details');
 			return Redirect::to('login');
 		}
 	}

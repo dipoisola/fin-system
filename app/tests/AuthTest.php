@@ -14,4 +14,18 @@ class AuthTest extends TestCase {
 
 	    $this->assertResponseOk();
 	}
+
+	public function testSignUpRoute()
+	{
+	    $this->call('GET', '/login');
+
+	    $this->assertResponseOk();
+	}
+
+	public function testLogInRoute()
+	{
+	    $this->call('GET', '/signup');
+
+	    $this->assertResponseOk();
+	}
 }

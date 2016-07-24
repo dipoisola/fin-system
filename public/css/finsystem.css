@@ -65,7 +65,7 @@
   -webkit-appearance:none;
 }
 
-.btn-create-bank:focus, .btn-debit:focus, .btn-credit:focus, .btn-payUser:focus, .btn-createBank:focus, .btn-payBank:focus {
+.btn-create-bank:focus, .btn-debit:focus, .btn-credit:focus, .btn-payUser:focus, .btn-createBank:focus, .btn-payBank:focus, .btn-transact:focus {
   outline: none;  
 }
 

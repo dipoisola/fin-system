@@ -1,4 +1,4 @@
-@extends('layout.master')
+@extends('layouts.master')
 @section('title', 'Login')
 
 @section('content')
@@ -6,10 +6,13 @@
   <div class="row">
 	<div class="col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-4">
 		<div class="">
-			<h5 class="text-center">Log in</h5>
+			<div class="login-font">LOG IN</div>
 			@foreach($errors->all() as $message)
     			<div class="text-center" style="color: red;">{{ $message }}</div>
 			@endforeach
+			@if (Session::has('info'))
+			   <div class="session-text">{{ Session::get('info') }}</div>
+			@endif
 
 			<form action="/login" method="POST" class="form form-signup" role="form">
 		        <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -20,9 +23,6 @@
 					<input type="password" class="form-control wide-input" name="password" placeholder="Password" required/>
 		        </div>
 				<button type="submit" class="btn-submit" role="button" name="enter">Submit</button>
-				<div class="">
-					<a class="" href="/password/email">Forgot your password?</a>
-				</div>
 			</form>
 		</div>
 	</div>
