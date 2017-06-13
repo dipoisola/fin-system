@@ -11,22 +11,10 @@ class AuthController extends BaseController {
 	{
 		return View::make('auth.login');
 	}
-    
+
 	public function registerUser()
 	{
-		$username = Input::get('username');
-		$name = Input::get('name');
-		$email = Input::get('email');
-		$password = Input::get('password');
-		$password_c = Input::get('password_confirmation');
-
-		$userdata = [
-			'username' => $username,
-			'name' => $name,
-			'email' => $email,
-			'password' => $password,
-			'password_confirmation' => $password_c
-			];
+		$userdata = Input::except(['join', '_token']);
 
 		$validator = Validator::make(
 		    $userdata,
@@ -37,21 +25,20 @@ class AuthController extends BaseController {
 		    	'password' => 'required|min:6|confirmed',
 		    	'password_confirmation' => 'required|min:6'
 		    ]
-		);	
+		);
 
-		if($validator->fails())
-		{
-			return Redirect::to('signup')->withErrors($validator);		
+		if($validator->fails()) {
+			return Redirect::to('signup')->withErrors($validator);
 		}
 
 		$user = new User([
-			'username' => $username,
-			'name' => $email,
-			'email' => $email,
-			'password' => Hash::make($password)
+			'username' => $userdata['username'],
+			'name' => $userdata['name'],
+			'email' => $userdata['email'],
+			'password' => Hash::make($userdata['password'])
 			]);
-		
-		$user->save();	
+
+		$user->save();
 		Session::flash('info', 'Registration successful, you can now login');
 		return Redirect::to('login');
 	}
@@ -60,7 +47,7 @@ class AuthController extends BaseController {
 	{
 		$username = Input::get('username');
 		$password = Input::get('password');
-		
+
 		if (Auth::attempt(['username' => $username, 'password' => $password]))
 		{
 			$user = Auth::user();
