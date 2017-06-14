@@ -66,14 +66,14 @@ return array(
 
 		'pgsql' => array(
 			'driver'   => 'pgsql',
-			'host'     => 'localhost',
-			'database' => 'finsystem',
-			'username' => 'homestead',
-			'password' => 'secret',
+			'host'     => 'ec2-54-228-226-93.eu-west-1.compute.amazonaws.com',
+			'database' => 'd3escs4e2oml5h',
+			'username' => 'ayyywjsmnuqmnd',
+			'password' => 'cgNFYL7NziTtoIE3rz8tQ3mVzB',
 			'charset'  => 'utf8',
 			'prefix'   => '',
 			'schema'   => 'public',
-			'port' => '54320',
+			'port' => '5432',
 		),
 
 		'sqlsrv' => array(
