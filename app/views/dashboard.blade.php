@@ -15,7 +15,7 @@
 				<button type="submit" class="btn-debit" role="button" name="enter">Debit this wallet</button>
 				<button type="submit" class="btn-credit" role="button" name="enter">Credit this wallet</button>
 
-				<form id="creditForm" action="/self/credit" method="POST" style="margin-top: 20px;">
+				<form id="creditForm" action="/pay/me" method="POST" style="margin-top: 20px;">
 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
 					<div style="">
 						<span class="enter-value">Enter credit value</span>
@@ -23,7 +23,7 @@
 						<input type="text" name="credit_amount" class="credit-input" required>
 					</div>
 					<button type="submit" class="btn-transact" role="button" name="enter">Transact</button>
-				</form>	
+				</form>
 
 				<form id="payUserForm" action="/pay/user" method="POST" style="margin-top: 15px;">
 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -44,14 +44,14 @@
 							@foreach($user->banks as $bank)
 								<option value={{ $bank->id }}>{{ $bank->name }} [{{ $bank->account_no }}]</option>
 							@endforeach
-						@else	
+						@else
 							<option value="">You have no bank account</option>
-						@endif	
+						@endif
 						</select>
 						<input type="text" name="credit_amount" id="credit-input" class="credit-input" placeholder="Credit (in digits)" required>
 					</div>
 					<button type="submit" class="btn-payBank" role="button" name="enter">Pay</button>
-				</form>			
+				</form>
 
 				<div id="debitDialog" class="margintop-30">
 					<div><span>What do you want to do?</span></div>
@@ -62,5 +62,5 @@
 			</div>
 		</div>
 	</div>
-</div>		
+</div>
 @endsection

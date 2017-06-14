@@ -23,7 +23,7 @@ Route::post('/login', ['uses' => 'AuthController@logUserIn']);
 
 Route::get('/auth/logout', 'AuthController@logUserOut');
 
-Route::post('/self/credit', ['uses' => 'TransactionsController@creditOwnWallet']);
+Route::post('/pay/me', ['uses' => 'TransactionsController@creditOwnWallet']);
 
 Route::get('/mybanks', ['before'   => 'auth', 'uses' => 'BankController@getIndex']);
 

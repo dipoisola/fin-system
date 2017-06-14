@@ -15,16 +15,16 @@ class CreateTransactionsTable extends Migration {
 		Schema::create('transactions', function(Blueprint $table)
 		{
 			$table->increments('id');
-            $table->integer('user_id')->unsigned();
-            $table->string('sender')->nullable();
-            $table->integer('receiver_id')->unsigned();
-            $table->string('receiver_name')->nullable();
-            $table->integer('amount')->unsigned();
-            $table->string('bank_name')->nullable();
-            $table->integer('acc_no')->unsigned();
-            $table->integer('transaction_type')->unsigned();
+      $table->integer('user_id')->unsigned();
+      $table->string('sender')->nullable();
+      $table->integer('receiver_id')->unsigned()->nullable();
+      $table->string('receiver_name')->nullable();
+      $table->integer('amount')->unsigned();
+      $table->string('bank_name')->nullable();
+      $table->integer('acc_no')->unsigned()->nullable();
+      $table->integer('transaction_type')->unsigned();
 			$table->timestamps();
-			
+
 			$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
 		});
 	}

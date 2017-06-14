@@ -41,12 +41,14 @@ class TransactionsController extends BaseController {
 			'receiver_id' => $user->id
 			];
 
-		$this->makeTransaction($transaction);
-		
-		$user->wallet_balance = $newBalance;
-		$user->save();	
+		if ($this->makeTransaction($transaction)) {
+			$user->wallet_balance = $newBalance;
+			$user->save();
 
-		return Response::json(['balance'=> $user->wallet_balance]);
+			return Response::json(['balance'=> $user->wallet_balance]);
+		}
+
+		return Response::json(['error'=> 'an error occured']);
 	}
 
 	/**
@@ -60,7 +62,7 @@ class TransactionsController extends BaseController {
 		$credit = Input::get('credit_amount');
 
 		$user = Auth::user();
-		
+
 		$friend = User::where('email', '=', $email)->first();
 
 		if($friend == $user || !$friend) {
@@ -88,14 +90,11 @@ class TransactionsController extends BaseController {
 
 		$friend->wallet_balance = $newBalance;
 		$friend->save();
-		
 
 		$user->save();
-		
+
 		return Response::json(['balance'=> $user->wallet_balance]);
 
-
-		// return Redirect::to('dashboard');
 	}
 
 	public function creditBankAccount()
@@ -124,8 +123,8 @@ class TransactionsController extends BaseController {
 			];
 
 		$this->makeTransaction($transaction);
-		
-		$bank->save(); 
+
+		$bank->save();
 		$user->save();
 
 		return Response::json(['balance'=> $user->wallet_balance]);
@@ -133,7 +132,9 @@ class TransactionsController extends BaseController {
 
 	public function makeTransaction($transactionData)
 	{
-		$newTransaction = new Transaction($transactionData);	
-		$newTransaction->save();
+		$newTransaction = new Transaction($transactionData);
+		$saved = $newTransaction->save();
+
+		return $saved;
 	}
 }

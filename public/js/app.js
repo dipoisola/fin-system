@@ -1,8 +1,8 @@
 $(function() { //when the DOM is ready
 
-    $('.btn-credit').click(function() { 
+    $('.btn-credit').click(function() {
     	if($('#debitDialog').is(':visible')) {
-    		$('#debitDialog').toggle(); 
+    		$('#debitDialog').toggle();
     	}
 
         if($('#payUserForm').is(':visible')) {
@@ -13,12 +13,12 @@ $(function() { //when the DOM is ready
             $('#payBankForm').toggle();
         }
 
-        $('#creditForm ').toggle();  
+        $('#creditForm ').toggle();
     });
 
-    $('.btn-debit').click(function() { 
+    $('.btn-debit').click(function() {
         if($('#creditForm').is(':visible')) {
-            $('#creditForm ').toggle(); 
+            $('#creditForm ').toggle();
         }
 
         if($('#payUserForm').is(':visible')) {
@@ -29,45 +29,45 @@ $(function() { //when the DOM is ready
             $('#payBankForm').toggle();
         }
 
-        $('#debitDialog ').toggle(); 
+        $('#debitDialog ').toggle();
     });
 
-    $('.btn-user').click(function() { 
+    $('.btn-user').click(function() {
         if($('#creditForm').is(':visible')) {
-            $('#creditForm ').toggle(); 
-        } 
-
-        if ($('#debitDialog').is(':visible')) {
-            $('#debitDialog ').toggle(); 
+            $('#creditForm ').toggle();
         }
 
-        $('#payUserForm ').toggle(); 
+        if ($('#debitDialog').is(':visible')) {
+            $('#debitDialog ').toggle();
+        }
+
+        $('#payUserForm ').toggle();
     });
 
-    $('.btn-account').click(function() { 
+    $('.btn-account').click(function() {
         if($('#creditForm').is(':visible')) {
-            $('#creditForm ').toggle(); 
-        } 
+            $('#creditForm ').toggle();
+        }
 
         if ($('#debitDialog').is(':visible')) {
-            $('#debitDialog ').toggle(); 
+            $('#debitDialog ').toggle();
         }
 
         if($('#payUserForm').is(':visible')) {
             $('#payUserForm').toggle();
         }
 
-        $('#payBankForm ').toggle(); 
+        $('#payBankForm ').toggle();
     });
 
-    $('.btn-create-bank').click(function() { 
-        $('#createBankForm ').toggle(); 
+    $('.btn-create-bank').click(function() {
+        $('#createBankForm ').toggle();
     });
 
-    $('.btn-payUser').on('click', payUser);  
-    $('.btn-payBank').on('click', payMyBank); 
-    $('.btn-transact').on('click', creditMyWallet); 
-    $('.btn-createBank').on('click', createBankAccount); 
+    $('.btn-payUser').on('click', payUser);
+    $('.btn-payBank').on('click', payMyBank);
+    $('.btn-transact').on('click', creditMyWallet);
+    $('.btn-createBank').on('click', createBankAccount);
 });
 
 var payUser = function(e) {
@@ -133,7 +133,7 @@ var creditMyWallet = function(e) {
 
     var creditAmount = $('.credit-input').val();
         _token = $('input[name=_token]').val();
-        form = $('#creditForm');    
+        form = $('#creditForm');
 
     if ($.trim(creditAmount) === "") {
         $('#info-platform2').css("color", "red").html('Field should not be blank');
@@ -143,7 +143,7 @@ var creditMyWallet = function(e) {
     } else {
         $.post(form.attr('action'), {'credit_amount': creditAmount, '_token': _token})
             .success(function(response) {
-                if(response.error) {
+                if (response.error) {
                     $('#info-platform1').css("color", "red").html(response.error);
                     return false;
                 }
@@ -152,6 +152,10 @@ var creditMyWallet = function(e) {
                 $('#info-platform2').css("color", "green").html('Wallet credited successfully!');
                 $('#mybalance').html( '$' + response.balance.toLocaleString());
             })
+            .fail(function(xhr, status, error) {
+                // error handling
+                console.log(status, error);
+            });
     }
 }
 
@@ -169,7 +173,7 @@ var createBankAccount = function(e) {
     } else {
         $.post(form.attr('action'), {'bank_name': bankName, 'account_type': accType, '_token': _token})
             .success(function(response) {
-                if(response.error) {
+                if (response.error) {
                     $('#info-platform3').css("color", "red").html(response.error);
                     return false;
                 }
@@ -192,7 +196,7 @@ var createBankAccount = function(e) {
                 div.innerHTML = div.innerHTML + $newBank;
 
                 if ($('.acc-message').is(':visible')) {
-                    $('.acc-message').toggle(); 
+                    $('.acc-message').toggle();
                 }
 
                 $('#info-platform3').css("color", "green").html('Account created successfully!');
