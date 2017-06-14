@@ -1,4 +1,6 @@
 FIN-SYSTEM
 ==========
 
-A micro financial system built with Laravel 4.2
+A pico financial system built with Laravel 4.2 (nano-hackathon stuff)
+
+Hosted at https://finsystem.herokuapp.com/
